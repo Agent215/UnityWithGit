@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUIController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class InventoryUIController : MonoBehaviour
     // Start is called before the first frame update
 
     GameObject Inventory;
-    public GameObject rowPrefab;
+
     public GameObject Parent;
 
 
@@ -21,9 +22,13 @@ public class InventoryUIController : MonoBehaviour
     public GameObject Crack;
     public GameObject Heroin;
     public List<GameObject> Drugs;
+
+    public GameObject InventoryText;
+    int totalInvCount;
+
     void Start()
     {
-
+        totalInvCount = 0;
         Drugs.Add(Weed);
         Drugs.Add(Crack);
         Drugs.Add(Speed);
@@ -31,12 +36,26 @@ public class InventoryUIController : MonoBehaviour
 
     }
 
+    public void resetInventory()
+    {
+
+        for (int i = 0; i < 4; i++)
+        {
+            Drugs[i].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
+            Drugs[i].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
+            Drugs[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
+        }
+
+    }
+
     public void updateInventoryUI()
     {
-      
+
         int TotalItems = GameObject.Find("Inventory").GetComponent<Inventory>().getTotalItems();
         int i;
         Inventory inv = GameObject.Find("Inventory").GetComponent<Inventory>().getInventoryE();
+        totalInvCount = GameObject.Find("Inventory").GetComponent<Inventory>().getCurrentTotal();
+        InventoryText.GetComponent<Text>().text = totalInvCount + "/100";
         //StartCoroutine(waiter());
         for (i = 0; i < TotalItems; i++)
         {
@@ -51,11 +70,16 @@ public class InventoryUIController : MonoBehaviour
                 Drugs[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = price;
 
             }
-
-
-
+            else
+            {
+                Drugs[i].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
+                Drugs[i].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
+                Drugs[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
+            }
 
         }
+
+
     }
 
 }

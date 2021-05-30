@@ -25,23 +25,11 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        //clear();
-        // GameObject crack = GameObject.Find("crack");
-        // GameObject weed = GameObject.Find("weed");
-        // GameObject speed = GameObject.Find("speed");
-        // GameObject Heroin = GameObject.Find("heroin");
+    
         iventoryAsString = "";
         this.inventory = new Dictionary<string, GameObject>();
         itemNames = new ArrayList();
 
-        // add(crack, 10);
-        // add(speed, 20);
-        // add(Heroin, 5);
-        // add(weed, 30);
-        // removeFromInventory(weed.GetComponent<Item>(),15);
-        // removeFromInventory(Heroin.GetComponent<Item>(),5);
-        // removeFromInventory(speed.GetComponent<Item>(),20);
-        // removeFromInventory(crack.GetComponent<Item>(),10);
 
     }
 
@@ -109,7 +97,7 @@ public class Inventory : MonoBehaviour
 
         currentTotal += value;
         if (getCurrentTotal() > maxTotal)
-            throw new System.Exception("Current total cann't go above the Max Total.");
+            throw new System.Exception("Current total can't go above the Max Total.");
     }
 
     /**
@@ -214,7 +202,7 @@ public class Inventory : MonoBehaviour
         Item tmpItem = inventory[name].GetComponent<Item>();
 
         tmpItem.setTotal(tmpItem.getTotal() + value);
-        addToTotal(value);
+       // addToTotal(value);
 
         return tmpItem.getTotal();
     }

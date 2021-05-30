@@ -132,7 +132,12 @@ public class Item : MonoBehaviour, IItem
      */
     public string getName()
     {
-        return name;
+        return ItemName;
+    }
+
+    public void setName(string name)
+    {
+         this.ItemName = name;
     }
 
     /**

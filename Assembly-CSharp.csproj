@@ -39,6 +39,7 @@
      <Compile Include="Assets\scripts\InventoryUIController.cs" />
      <Compile Include="Assets\scripts\collections\Store.cs" />
      <Compile Include="Assets\scripts\time\calendar.cs" />
+     <Compile Include="Assets\scripts\POSUI.cs" />
      <Compile Include="Assets\scripts\CityUIController.cs" />
      <Compile Include="Assets\scripts\commerce\Wallet.cs" />
      <Compile Include="Assets\scripts\items\Iitem.cs" />
@@ -46,7 +47,12 @@
      <Compile Include="Assets\scripts\StoreUIController.cs" />
      <Compile Include="Assets\scripts\collections\Locations.cs" />
      <Compile Include="Assets\scripts\items\Item.cs" />
-     <Compile Include="Assets\scripts\POSUI.cs" />
+     <Compile Include="Assets\ItemUIController.cs" />
+     <Compile Include="Assets\Flags.cs" />
+     <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
+     <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
+     <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
+     <None Include="Assets\SimplePixelUI\fonts\Font2\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/2020.3.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

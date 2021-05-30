@@ -13,22 +13,21 @@ public class StoreUIController : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject storeInventory;
-    public GameObject rowPrefab;
     public GameObject Parent;
 
-    public GameObject Weed;
-    public GameObject Speed;
-    public GameObject Crack;
-    public GameObject Heroin;
+    public GameObject row1;
+    public GameObject row2;
+    public GameObject row3;
+    public GameObject row4;
 
-    public List<GameObject> Drugs;
+    public List<GameObject> DrugRows;
     void Start()
     {
 
-        Drugs.Add(Weed);
-        Drugs.Add(Crack);
-        Drugs.Add(Speed);
-        Drugs.Add(Heroin);
+        DrugRows.Add(row1);
+        DrugRows.Add(row2);
+        DrugRows.Add(row3);
+        DrugRows.Add(row4);
 
     }
 
@@ -50,9 +49,9 @@ public class StoreUIController : MonoBehaviour
             string name = inv.getItemByID(i).getName().ToString() + "  ";
             string avail = inv.getItemByID(i).getTotal().ToString();
             string price = inv.getItemByID(i).getPrice().ToString();
-            Drugs[i].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>().text = name;
-            Drugs[i].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Text>().text = avail;
-            Drugs[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = price;
+            DrugRows[i].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>().text = name;
+            DrugRows[i].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Text>().text = avail;
+            DrugRows[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = price;
 
 
         }

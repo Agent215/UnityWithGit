@@ -5,9 +5,12 @@ using UnityEngine;
 public class Store : MonoBehaviour
 {
 
+
+    // store will have its own inventory object.
     public GameObject storeInventory;
 
     public List<GameObject> listOfItems;
+
     public GameObject selectedItem;
 
     public GameObject StoreText;
@@ -28,27 +31,37 @@ public class Store : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject weed = (GameObject)Resources.Load("prefabs/weed", typeof(GameObject));
+        Instantiate(weed, new Vector3(0, 0, 0), Quaternion.identity);
+         listOfItems.Add(GameObject.Find("weed(Clone)"));
 
+        GameObject crack = (GameObject)Resources.Load("prefabs/crack", typeof(GameObject));
+        Instantiate(crack, new Vector3(0, 0, 0), Quaternion.identity);
+         listOfItems.Add(GameObject.Find("crack(Clone)"));
+
+        GameObject speed = (GameObject)Resources.Load("prefabs/speed", typeof(GameObject));
+        Instantiate(speed, new Vector3(0, 0, 0), Quaternion.identity);
+        listOfItems.Add(GameObject.Find("speed(Clone)"));
+
+        GameObject heroin = (GameObject)Resources.Load("prefabs/heroin", typeof(GameObject));
+        Instantiate(heroin, new Vector3(0, 0, 0), Quaternion.identity);
+        listOfItems.Add(GameObject.Find("heroin(Clone)"));
     }
 
     void Update()
     {
 
-        StoreText.GetComponent<UnityEngine.UI.Text>().text = toString();
+        // StoreText.GetComponent<UnityEngine.UI.Text>().text = toString();
     }
 
 
-    // store will have its own inventory object.
-
-
     //generateNewRandomInventory()  will generate a new random inventory for the store.
-
     public void generateNewRandomInventory()
     {
         // storeInventory.GetComponent<Inventory>().clear();
         foreach (GameObject Item in listOfItems)
         {
-         
+
             storeInventory.GetComponent<Inventory>().remove(Item.GetComponent<Item>().getName());
         }
         foreach (GameObject Item in listOfItems)
@@ -57,6 +70,7 @@ public class Store : MonoBehaviour
             storeInventory.GetComponent<Inventory>().add(Item, (int)Mathf.Round(Random.Range(10f, 100f)));
         }
     }
+
     //Buy(string itemName, int amount)   this is a buy from player perspective so substract given amount from store inventory
     public void Buy(Item item, int amount)
     {
@@ -81,7 +95,8 @@ public class Store : MonoBehaviour
     }
 
 
-    public GameObject getStore(){
+    public GameObject getStore()
+    {
 
         return storeInventory;
     }
