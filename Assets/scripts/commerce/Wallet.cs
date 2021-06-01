@@ -11,7 +11,7 @@ public class Wallet : MonoBehaviour
 
    void Update(){
 
-         CashText.GetComponent<UnityEngine.UI.Text>().text = "Cash: $"+ getCash().ToString();
+         CashText.GetComponent<UnityEngine.UI.Text>().text = "Cash:<color=#19FF10>$"+ getCash().ToString() + "</color>";
    }
 
     /**

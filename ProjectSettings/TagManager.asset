@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - StoreHeader
+  - StoreParent
+  - StoreRow
+  - InventoryRow
+  - InventoryParent
+  - Bank
   layers:
   - Default
   - TransparentFX

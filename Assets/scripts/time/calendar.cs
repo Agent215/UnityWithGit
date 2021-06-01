@@ -19,7 +19,8 @@ public class calendar : MonoBehaviour
 
      void Update()
     {
-        string str = "Days Left:" + getDays().ToString();
+        int i = getTotalDays() - getDays();
+        string str = "Day:" + i + "/" + getTotalDays().ToString();
         Text.GetComponent<UnityEngine.UI.Text>().text = str;
     }
 

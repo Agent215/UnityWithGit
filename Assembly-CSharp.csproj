@@ -36,19 +36,26 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\InventoryUIController.cs" />
+     <Compile Include="Assets\scripts\UI\InventoryUIController.cs" />
      <Compile Include="Assets\scripts\collections\Store.cs" />
      <Compile Include="Assets\scripts\time\calendar.cs" />
-     <Compile Include="Assets\scripts\POSUI.cs" />
-     <Compile Include="Assets\scripts\CityUIController.cs" />
+     <Compile Include="Assets\scripts\UI\POSUI.cs" />
+     <Compile Include="Assets\scripts\UI\CityUIController.cs" />
      <Compile Include="Assets\scripts\commerce\Wallet.cs" />
+     <Compile Include="Assets\scripts\Flags.cs" />
      <Compile Include="Assets\scripts\items\Iitem.cs" />
+     <Compile Include="Assets\scripts\UI\ItemUIController.cs" />
      <Compile Include="Assets\scripts\collections\Inventory.cs" />
-     <Compile Include="Assets\scripts\StoreUIController.cs" />
+     <Compile Include="Assets\scripts\UI\StoreUIController.cs" />
      <Compile Include="Assets\scripts\collections\Locations.cs" />
      <Compile Include="Assets\scripts\items\Item.cs" />
-     <Compile Include="Assets\ItemUIController.cs" />
-     <Compile Include="Assets\Flags.cs" />
+     <Compile Include="Assets\scripts\SceneController.cs" />
+     <Compile Include="Assets\scripts\Main.cs" />
+     <Compile Include="Assets\scripts\SoundController.cs" />
+     <Compile Include="Assets\scripts\commerce\Bank.cs" />
+     <Compile Include="Assets\scripts\UI\BankUI.cs" />
+     <Compile Include="Assets\scripts\UI\AlertToastController.cs" />
+     <Compile Include="Assets\scripts\GameEvent.cs" />
      <None Include="Assets\SimplePixelUI\fonts\Font2\license.txt" />
      <None Include="Assets\SimplePixelUI\fonts\Font1\license.txt" />
      <None Include="Assets\SimplePixelUI\fonts\Font1\readme.txt" />
