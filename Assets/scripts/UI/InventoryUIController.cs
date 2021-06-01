@@ -51,6 +51,7 @@ public class InventoryUIController : MonoBehaviour
         {
             gmo.transform.parent = parent.transform;
             Drugs.Add(gmo);
+            gmo.SetActive(false);
         }
 
 
@@ -63,6 +64,7 @@ public class InventoryUIController : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
+            Drugs[i].SetActive(false);
             Drugs[i].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
             Drugs[i].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
             Drugs[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
@@ -84,6 +86,7 @@ public class InventoryUIController : MonoBehaviour
 
             if (inv.getItemByID(i) != null)
             {
+                Drugs[i].SetActive(true);
                 string name = inv.getItemByID(i).getName().ToString() + "  ";
                 string avail = inv.getItemByID(i).getTotal().ToString();
                 string price = inv.getItemByID(i).getPrice().ToString();
@@ -94,6 +97,7 @@ public class InventoryUIController : MonoBehaviour
             }
             else
             {
+                Drugs[i].SetActive(false);
                 Drugs[i].transform.GetChild(0).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
                 Drugs[i].transform.GetChild(1).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
                 Drugs[i].transform.GetChild(2).gameObject.GetComponent<UnityEngine.UI.Text>().text = "";

@@ -18,8 +18,6 @@ public class Locations : MonoBehaviour
 
 
 
-
-
     void Start()
     {
         locations = new ArrayList();
